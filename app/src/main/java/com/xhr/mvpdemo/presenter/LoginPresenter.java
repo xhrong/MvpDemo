@@ -1,5 +1,8 @@
 package com.xhr.mvpdemo.presenter;
 
+import android.media.MediaPlayer;
+import android.os.Environment;
+
 import com.xhr.mvpdemo.model.IUser;
 import com.xhr.mvpdemo.model.UserModel;
 import com.xhr.mvpdemo.view.ILoginView;
@@ -18,14 +21,16 @@ public class LoginPresenter implements ILoginPresenter, OnLoginListener {
         user = new UserModel();
     }
 
+    MediaPlayer mMediaPlayer;
+
     @Override
     public void login() {
-        String userName=loginView.getUserName();
-        if(userName==null && userName.equals("")){
+        String userName = loginView.getUserName();
+        if (userName == null && userName.equals("")) {
             return;
         }
         loginView.showProgress();
-        user.login(userName,this);
+        user.login(userName, this);
     }
 
     @Override
