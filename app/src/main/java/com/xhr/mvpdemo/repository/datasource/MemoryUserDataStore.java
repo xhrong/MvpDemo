@@ -60,7 +60,7 @@ public class MemoryUserDataStore implements IUserDataStore {
                             User user = new User();
                             user.login = "test";
                             user.email = "test";
-                            user.id = 1;
+                            user.id = 0;
                             return user;
                         } else return null;
                     }
